@@ -1,0 +1,19 @@
+cd into lib folder and do the following curl commands:
+
+curl -L -o lib/javax.json-api-1.1.4.jar \
+  https://repo1.maven.org/maven2/javax/json/javax.json-api/1.1.4/javax.json-api-1.1.4.jar
+
+curl -L -o lib/javax.json-1.1.4.jar \
+  https://repo1.maven.org/maven2/org/glassfish/javax.json/1.1.4/javax.json-1.1.4.jar
+
+curl -L \
+  "https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.18.2/jackson-annotations-2.18.2.jar" \
+  -o jackson-annotations-2.18.2.jar
+
+curl -L \
+  "https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.18.2/jackson-core-2.18.2.jar" \
+  -o jackson-core-2.18.2.jar
+
+curl -L \
+  "https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.18.2/jackson-databind-2.18.2.jar" \
+  -o jackson-databind-2.18.2.jar
