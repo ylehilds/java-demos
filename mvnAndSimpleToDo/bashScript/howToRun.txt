@@ -1,0 +1,10 @@
+run bash script once:
+
+./run-fetch-todo.sh  
+
+after you ran the script once it creates lib folder, then all you need to run are the following commands to complie and run:
+
+
+javac -cp "lib/*:." FetchTodo.java
+java -cp "lib/*:." FetchTodo
+

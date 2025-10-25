@@ -1,0 +1,6 @@
+mvn clean compile 
+
+mvn exec:java  // because there is a build in the pom.xml it knows the main class to run otherwise you'd have to run like this:
+
+mvn exec:java -Dexec.mainClass=FetchTodo
+
