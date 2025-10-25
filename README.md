@@ -31,4 +31,4 @@ curl -L \
 ## Compile & Run commands
 1. Change directory into app folder: `cd apps/<AppName>`
 2. Compile command: `javac -d ../../build src/main/java/dev/lehi/<app_name>/*.java` or if your app has references to external libraries: `javac -cp "src/main/java/dev/lehi/<app_name>/lib/*" -d ../../build src/main/java/dev/lehi/<app_name>/*.java`
-3. Run command: `java -cp ../../build dev.lehi.<app_name>.<ClassName>` or this if your app has references to external libraries: `java -cp "../../build:src/main/java/dev/lehi/<app_name>/lib/*" dev.lehi.<app_name>.<ClassName>`
+3. Run command: `java -cp ../../build dev.lehi.<app_name>.<ClassName>` or if your app has references to external libraries: `java -cp "../../build:src/main/java/dev/lehi/<app_name>/lib/*" dev.lehi.<app_name>.<ClassName>`
