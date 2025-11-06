@@ -8,7 +8,9 @@ public class HelloWorldV2 {
         try {
             System.out.print("Please enter your name: ");
             String name = scanner.nextLine();
-            System.out.println("Hello " + name + "!");
+            System.out.print("Where are you from? ");
+            String location = scanner.nextLine();
+            System.out.println("Hello " + name + " from " + location + "!");
         } finally {
             scanner.close();
         }
