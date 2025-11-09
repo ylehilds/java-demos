@@ -5,8 +5,10 @@ public class AnimalTestDrive {
     MyAnimalList list = new MyAnimalList();
     Dog dog = new Dog();
     Cat cat = new Cat();
+    Bird bird = new Bird();
     list.add(dog);
     list.add(cat);
+    list.add(bird);
   }
 }
   

@@ -8,7 +8,7 @@ public class MyAnimalList {
   public void add(Animal a) {
     if (nextIndex < animals.length) {
       animals[nextIndex] = a;
-      System.out.println("Animal added at " + nextIndex);
+      System.out.println("Animal: " + a.getClass().getSimpleName() + " added at " + nextIndex);
       nextIndex++;
     }
   }
