@@ -31,7 +31,8 @@ curl -L \
 ## Compile & Run commands
 1. Change directory into app folder: `cd apps/<AppName>`
 2. Compile command: `javac -d ../../build src/main/java/dev/lehi/<app_name>/*.java` or if your app has references to external libraries: `javac -cp "src/main/java/dev/lehi/<app_name>/lib/*" -d ../../build src/main/java/dev/lehi/<app_name>/*.java`
-3. Run command: `java -cp ../../build dev.lehi.<app_name>.<ClassName>` or if your app has references to external libraries: `java -cp "../../build:src/main/java/dev/lehi/<app_name>/lib/*" dev.lehi.<app_name>.<ClassName>`
-
+3. Compile command example: `javac -d ../../build src/main/java/dev/lehi/todo/*.java` or if your app has references to external libraries: `javac -cp "src/main/java/dev/lehi/ToDo/lib/*" -d ../../build src/main/java/dev/lehi/todo/*.java`
+4. Run command: `java -cp ../../build dev.lehi.<app_name>.<ClassName>` or if your app has references to external libraries: `java -cp "../../build:src/main/java/dev/lehi/<app_name>/lib/*" dev.lehi.<app_name>.<ClassName>`
+5. Run command example: `java -cp ../../build dev.lehi.tictactoe.App` or if your app has references to external libraries example: `java -cp "../../build:src/main/java/dev/lehi/todo/lib/*" dev.lehi.todo.FetchTodo`
 ## Set Java Source Folder
 Because I have a certain way to build Java projects, IDEs such as intelliJ has difficulties to determine whether this collection of apps are all Java projects, usually a project is one Java app and not a collection of Java apps, to fix that all you have to do is to locate the Java folder, something like <App_Name>/src/main/java, right click on the java folder and select "Mark Directory As" then "Sources Root".
