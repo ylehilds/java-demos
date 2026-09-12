@@ -27,6 +27,7 @@ public class Minesweeper {
     JLabel textLabel = new JLabel();
     JPanel textPanel = new JPanel();
     JPanel boardPanel = new JPanel();
+    JButton restartButton = new JButton("Restart");
 
     int mineCount = 10;
     MineTile[][] board = new MineTile[numRows][numCols];
@@ -37,6 +38,8 @@ public class Minesweeper {
     boolean gameOver = false;
 
     Minesweeper() {
+        restartButton.setVisible(false);
+        restartButton.addActionListener(e -> restartGame());
 //        frame.setVisible(true);
         frame.setSize(boardWidth, boardHeight);
         frame.setLocationRelativeTo(null);
@@ -50,7 +53,8 @@ public class Minesweeper {
         textLabel.setOpaque(true);
 
         textPanel.setLayout(new BorderLayout());
-        textPanel.add(textLabel);
+        textPanel.add(textLabel, BorderLayout.CENTER);
+        textPanel.add(restartButton, BorderLayout.EAST);
         frame.add(textPanel, BorderLayout.NORTH);
 
         boardPanel.setLayout(new GridLayout(numRows, numCols)); //8x8
@@ -76,7 +80,7 @@ public class Minesweeper {
 
                         // left click
                         if (e.getButton() == MouseEvent.BUTTON1) {
-                            if (tile.getText() == "") {
+                            if (tile.getText().isEmpty()) {
                                 if (mineList.contains(tile)) {
                                     revealMines();
                                 }
@@ -87,10 +91,10 @@ public class Minesweeper {
                         }
                         // right click
                         else if (e.getButton() == MouseEvent.BUTTON3) {
-                            if (tile.getText() == "" && tile.isEnabled()) {
+                            if (tile.getText().isEmpty() && tile.isEnabled()) {
                                 tile.setText("🚩");
                             }
-                            else if (tile.getText() == "🚩") {
+                            else if (tile.getText().equals("🚩")) {
                                 tile.setText("");
                             }
                         }
@@ -138,6 +142,7 @@ public class Minesweeper {
 
         gameOver = true;
         textLabel.setText("Game Over!");
+        restartButton.setVisible(true);
     }
 
     void checkMine(int r, int c) {
@@ -190,6 +195,7 @@ public class Minesweeper {
         if (tilesClicked == numRows * numCols - mineList.size()) {
             gameOver = true;
             textLabel.setText("Mines Cleared!");
+            restartButton.setVisible(true);
         }
     }
 
@@ -201,5 +207,23 @@ public class Minesweeper {
             return 1;
         }
         return 0;
+    }
+
+    void restartGame() {
+        gameOver = false;
+        tilesClicked = 0;
+
+        textLabel.setText("Minesweeper: " + mineCount);
+        restartButton.setVisible(false);
+
+        for (int r = 0; r < numRows; r++) {
+            for (int c = 0; c < numCols; c++) {
+                MineTile tile = board[r][c];
+                tile.setText("");
+                tile.setEnabled(true);
+            }
+        }
+
+        setMines(); // generate new mine locations
     }
 }
